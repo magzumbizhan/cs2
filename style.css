@@ -1,0 +1,144 @@
+:root {
+    --bg-deep: #001a33; 
+    --accent-yellow-top: #ffcc00;
+    --accent-yellow-bottom: #b38f00; 
+    --text-bright: #ffffff;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-deep);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-bright);
+    overflow-x: hidden;
+}
+
+/* Широкая шапка с градиентом */
+.top-bar {
+    background: linear-gradient(to bottom, var(--accent-yellow-top), var(--accent-yellow-bottom));
+    padding: 60px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.top-bar h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+/* Макет */
+.main-layout {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* ШИРОКИЕ БАННЕРЫ (250px) */
+.ads-banner {
+    flex: 0 0 250px; 
+    height: 800px;
+    position: sticky;
+    top: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+}
+
+.ads-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Контент */
+.feed-container {
+    flex: 1;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.map-item {
+    margin-bottom: 60px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.map-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Ячейка и маленькая картинка (35%) */
+.map-image-wrapper {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 6px solid var(--accent-yellow-top);
+}
+
+.map-item img {
+    width: 35%; 
+    height: auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.map-info {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.map-name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.map-number {
+    color: var(--accent-yellow-top);
+    font-weight: 800;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.98);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 95%;
+    max-height: 90vh;
+    border: 3px solid var(--accent-yellow-top);
+}
+
+footer {
+    text-align: center;
+    padding: 100px 20px;
+    opacity: 0.4;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+}
+
+/* На планшетах и телефонах убираем баннеры */
+@media (max-width: 1200px) {
+    .ads-banner { display: none; }
+}

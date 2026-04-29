@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 Positions | Tactical Database</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@1,900&family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-bar">
+        <h1>counter strike positions</h1>
+    </div>
+
+    <div class="main-layout">
+        <aside class="ads-banner">
+            <img src="left-ad.jpg" alt="Реклама слева">
+        </aside>
+
+        <main class="feed-container">
+            <div class="map-item" onclick="openModal(this)" data-big="mirage-positions.jpg">
+                <div class="map-image-wrapper"><img src="mirage.jpg"></div>
+                <div class="map-info">
+                    <span class="map-name">Mirage</span>
+                    <span class="map-number">#01</span>
+                </div>
+            </div>
+
+            <div class="map-item" onclick="openModal(this)" data-big="dust2-positions.jpg">
+                <div class="map-image-wrapper"><img src="dust2.jpg"></div>
+                <div class="map-info">
+                    <span class="map-name">Dust 2</span>
+                    <span class="map-number">#02</span>
+                </div>
+            </div>
+
+            <div class="map-item" onclick="openModal(this)" data-big="anubis-positions.jpg">
+                <div class="map-image-wrapper"><img src="anubis.jpg"></div>
+                <div class="map-info">
+                    <span class="map-name">Anubis</span>
+                    <span class="map-number">#03</span>
+                </div>
+            </div>
+
+            <div class="map-item" onclick="openModal(this)" data-big="nuke-positions.jpg">
+                <div class="map-image-wrapper"><img src="nuke.jpg"></div>
+                <div class="map-info">
+                    <span class="map-name">Nuke</span>
+                    <span class="map-number">#04</span>
+                </div>
+            </div>
+
+            <div class="map-item" onclick="openModal(this)" data-big="ancient-positions.jpg">
+                <div class="map-image-wrapper"><img src="ancient.jpg"></div>
+                <div class="map-info">
+                    <span class="map-name">Ancient</span>
+                    <span class="map-number">#05</span>
+                </div>
+            </div>
+
+            <div class="map-item" onclick="openModal(this)" data-big="inferno-positions.jpg">
+                <div class="map-image-wrapper"><img src="inferno.jpg"></div>
+                <div class="map-info">
+                    <span class="map-name">Inferno</span>
+                    <span class="map-number">#06</span>
+                </div>
+            </div>
+
+            <div class="map-item" onclick="openModal(this)" data-big="overpass-positions.jpg">
+                <div class="map-image-wrapper"><img src="overpass.jpg"></div>
+                <div class="map-info">
+                    <span class="map-name">Overpass</span>
+                    <span class="map-number">#07</span>
+                </div>
+            </div>
+        </main>
+
+        <aside class="ads-banner">
+            <img src="right-ad.jpg" alt="Реклама справа">
+        </aside>
+    </div>
+
+    <footer>
+        DATABASE &copy; 2026 // CS2 TACTICAL POSITIONS
+    </footer>
+
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <img id="modalImg" class="modal-content">
+    </div>
+
+    <script>
+        function openModal(element) {
+            const modal = document.getElementById('imageModal');
+            const img = document.getElementById('modalImg');
+            const bigSrc = element.getAttribute('data-big');
+            img.src = bigSrc;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>
